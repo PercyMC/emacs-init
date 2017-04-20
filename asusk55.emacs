@@ -1,3 +1,4 @@
+;; .emacs for AsusK55v
 ;; initialize package.el
 (package-initialize)
 

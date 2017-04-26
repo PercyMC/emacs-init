@@ -101,11 +101,16 @@
 ;; mi personalización
 (load-file "mcmacros.el")
 ;; para redimensionamiento de la ventana actual
-(global-set-key (kbd "<C-up>") 'shrink-window)
-(global-set-key (kbd "<C-down>") 'enlarge-window)
-(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
-(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
- 
+;;(global-set-key (kbd "<C-up>") 'shrink-window)
+;;(global-set-key (kbd "<C-down>") 'enlarge-window)
+;;(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
+;;(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
+
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
 (global-set-key (kbd "<f5>") 'other-window)
 (global-set-key (kbd "<f6>") 'previous-buffer)
 (global-set-key (kbd "<f7>") 'next-buffer)

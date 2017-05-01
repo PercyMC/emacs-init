@@ -4,6 +4,28 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;;company-mode
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; start yasnippet with emacs
+(require 'yasnippet)
+;;(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(yas-global-mode 1)
+
+;;-----------------------------------------------------------------------------------------------------------------------
+;; Remove Yasnippet's default tab key binding
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+;; Set Yasnippet's key binding to shift+tab
+(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+;; Alternatively use Control-c + tab
+(define-key yas-minor-mode-map (kbd "\C-c j") 'yas-expand)
+
+
+;;(ac-set-trigger-key "TAB")
+;;(ac-set-trigger-key "<tab>")
+
+
 (global-set-key (kbd "C-S-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-S-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-S-<down>") 'enlarge-window)
@@ -81,6 +103,8 @@
  '(hl-fg-colors
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
+ '(ido-enable-flex-matching t)
+ '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
  '(magit-diff-use-overlays nil)
  '(menu-bar-mode nil)
@@ -90,13 +114,14 @@
      ("melpa" . "http://stable.melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (sr-speedbar darktooth-theme base16-theme birds-of-paradise-plus-theme monokai-theme solarized-theme)))
+    (yasnippet company sr-speedbar darktooth-theme base16-theme birds-of-paradise-plus-theme monokai-theme solarized-theme)))
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
  '(tool-bar-mode nil)
+ '(uniquify-buffer-name-style (quote post-forward) nil (uniquify))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
